@@ -2,11 +2,11 @@ import re
 
 regex_dict = {}
 regex_dict['email'] =r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+"
-regex_dict['UK phone number']=r"(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?"
+regex_dict['UK phone number']=r"(((\(\+44|0044|00 44|44)?(\s\(0\)\s|\s0\s|\s)?)|0)7\d{3}(\s)?\d{6}"
 regex_dict['Spanish phone number']=r"(\+34|0034|00 34|34)?[ -]*(6|7|9|8)[ -]*([0-9][ -]*){8}"
 regex_dict['French phone number']=r"(\+33|0033|00 33|33)?[ -]*(1|2|3|4|5|6)[ -]*(([0-9][ -]*){2}){4}"
 regex_dict['Spanish DNI/NIE']=r"((([X-Z])|([LM])){1}([-," "]?)((\d){7})([-]?)([A-Z]{1}))|((\d{8})([-, " "]?)([A-Z]))"
-regex_dict['French id']=r"\b\b\d{12}\b\b"
+regex_dict['French id (insee)']=r"\b\b\d{15}\b\b"
 regex_dict['UK id']=r"([a-zA-Z]){2}([-," "]?)([0-9]){2}([-," "]?)([0-9]){2}([-," "]?)([0-9]){2}([-," "])?([Aa-dD]){1}?$"
 regex_dict['French drivers licence']=r"\b\d{12}\b"
 regex_dict['UK drivers licence']=r"[A-Z9]{5}\d{6}[A-Z9]{2}\d[A-Z]{2}"
