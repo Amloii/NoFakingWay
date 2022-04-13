@@ -3,6 +3,7 @@ import time
 import numpy as np
 import re
 import sys
+import json
 
 # Load filters folders
 sys.path.append('./filters/PII') 
@@ -43,9 +44,11 @@ if st.button(label="✨ Validate!"):
      
      st.subheader('SageMaker endpoint response', anchor=None)
      
+     json_object = json.dumps(result_dict, indent = 4) 
+     
      doc = st.text_area('',
-     value=result_dict,
-     height=50,
+     value=json_object,
+     height=100,
      )
      
 st.write ('Still under development')
