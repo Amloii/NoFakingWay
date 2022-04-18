@@ -5,7 +5,7 @@ import re
 import sys
 import json
 import uuid
-import subprocess
+
 
 # Load filters folders
 sys.path.append('./filters/PII') 
@@ -14,9 +14,9 @@ from PII_filter import PII_filter, regex_dict
 sys.path.append('./filters/Language') 
 from Lang_filter import Lang_filter, create_language_detection_model
 
-#Load language model
-#subprocess.getoutput("python -m spacy download en_core_web_sm")
-language_detection_model = create_language_detection_model()
+#Load language model (if was not already loaded)
+if 'language_detection_model' not in globals():
+     language_detection_model = create_language_detection_model()
 
 examples_dict = {}
 examples_dict['None'] = ''
