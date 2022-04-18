@@ -5,17 +5,24 @@ import re
 import sys
 import json
 import uuid
+import subprocess
 
 # Load filters folders
 sys.path.append('./filters/PII') 
 from PII_filter import PII_filter, regex_dict
+
+sys.path.append('./filters/Language') 
+from Lang_filter import Lang_filter, create_language_detection_model
+
+#Load language model
+#subprocess.getoutput("python -m spacy download en_core_web_sm")
+language_detection_model = create_language_detection_model()
 
 examples_dict = {}
 examples_dict['None'] = ''
 examples_dict['Valid review'] = 'La comida estaba muy buena'
 examples_dict['Example with PI (1)'] = 'Mi numero de telefono es el 690312141'
 examples_dict['Example with PI (2)'] = 'Mi mail es sdsdf@gmail.com'
-
 
 st.set_page_config(
      page_title="Review validation",
@@ -43,7 +50,9 @@ if st.button(label="✨ Validate!"):
      input_dict['review'] = doc
      input_dict['value'] = 5
      
-     result_dict = PII_filter(input_dict['review'], regex_dict)
+     result_dict = Lang_filter(language_detection_model, input_dict['review'])
+     if not result_dict['suspicious']:
+          result_dict = PII_filter(input_dict['review'], regex_dict)
      
      if result_dict['suspicious']:
           st.error(f'💢 THE REVIEW IS SUSPICIOUS! \n  We think this review includes {result_dict["filter_failed"]} ( Candidates: {result_dict["motive"]})')
