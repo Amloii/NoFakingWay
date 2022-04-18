@@ -2,7 +2,6 @@ import streamlit as st
 import sys
 import json
 import uuid
-import subprocess
 
 # Load filters folders
 sys.path.append('./filters/PII') 

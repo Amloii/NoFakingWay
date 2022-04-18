@@ -33,12 +33,10 @@ def PII_filter(text, regex_dict):
           result_dict['suspicious'] = True
           result_dict['filter_failed'] = 'Personal information'
           result_dict['motive'] = ", ".join(list_motiv)   
-          result_dict['probability'] = 1.0
      else: 
           result_dict = {}
           result_dict['suspicious'] = False
           result_dict['filter_failed'] = ''
           result_dict['motive'] = ''
-          result_dict['probability'] = 0.0
-     
+          
      return result_dict
