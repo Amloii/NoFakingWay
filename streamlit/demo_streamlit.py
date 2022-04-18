@@ -12,7 +12,6 @@ sys.path.append('./filters/Language')
 from Lang_filter import Lang_filter, create_language_detection_model
 
 #Load language model (if was not already loaded)
-subprocess.getoutput("python -m spacy download en_core_web_sm")
 language_detection_model = create_language_detection_model()
 
 examples_dict = {}
