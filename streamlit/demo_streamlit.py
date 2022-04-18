@@ -1,11 +1,8 @@
 import streamlit as st
-import time
-import numpy as np
-import re
 import sys
 import json
 import uuid
-
+import subprocess
 
 # Load filters folders
 sys.path.append('./filters/PII') 
@@ -16,6 +13,7 @@ from Lang_filter import Lang_filter, create_language_detection_model
 
 #Load language model (if was not already loaded)
 if 'language_detection_model' not in globals():
+     subprocess.getoutput("python -m spacy download en_core_web_sm")
      language_detection_model = create_language_detection_model()
 
 examples_dict = {}
