@@ -11,8 +11,12 @@ def create_language_detection_model():
     
     # First try, next time use it
     try:
+        print('FIRST TRY!')
+        print('-'*10)
         nlp = spacy.load("en_core_web_sm")
     except:
+        print('SECOND TRY!')
+        print('-'*10)
         subprocess.getoutput("python -m spacy download en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
     Language.factory("language_detector", func=get_lang_detector)
