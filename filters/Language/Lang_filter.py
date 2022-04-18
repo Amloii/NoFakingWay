@@ -27,7 +27,7 @@ def Lang_filter(model, text):
         
         result_dict = {}
         result_dict['suspicious'] = True
-        result_dict['filter_failed'] = 'Filler Filter'
+        result_dict['filter_failed'] = 'Filler'
         result_dict['motive'] = "Nonsense language" if (lang['score'] < 0.7) else f"{Language.make(language=standardize_tag(lang['language'])).display_name()} language detected, not supported"
         
     else: 
