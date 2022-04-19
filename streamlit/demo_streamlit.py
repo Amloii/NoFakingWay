@@ -10,8 +10,6 @@ filters_dir = os.path.join(os.path.dirname( __file__ ), '..', 'filters' )
 sys.path.append(filters_dir) 
 
 from PII.PII_filter import PII_filter, regex_dict
-
-sys.path.append('../filters') 
 from Lang.Lang_filter import Lang_filter, create_language_detection_model
 
 #Load language model (if was not already loaded)
