@@ -14,7 +14,7 @@
 
 ---
 
-<p align="center"> Proyect for detection of Fake Reviews and Spam in ecommerce
+<p align="center"> Project for detection of Fake Reviews and Spam in e-commerce
     <br> 
 </p>
 
@@ -27,15 +27,13 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Proyect for detection of Fake Reviews and Spam in ecommerce.
+The Fake Reviews and the Spam are typically problems related to e-commerce platforms, such as Amazon or Yelp.
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+This repository validates the review across multiple filters, removing different spam cases. At this moment, the applied filters are:
+- **Lang filter**: Mark the review as suspicious if it was written in another language different to Spanish, English, and french (You can modify the allowed languages in [this script](https://github.com/Amloii/NoFakingWay/blob/cc20ec70e375f67482cc96c620442fa6b0aba753/filters/Lang/Lang_filter.py)), or the words don't correspond to any language (for example, jsdfisefbijfd adifaio)
+- **PII filter**: Mark the review as Spam suspicious if includes Personal Information, such as Telephone numbers or ID credentials.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-
-
-### Installing
+## 🎬 Getting Started
 
 You can use this repo installing the requeried libraries with
 
@@ -43,12 +41,18 @@ You can use this repo installing the requeried libraries with
 pip install -r requirements.txt
 ```
 
-
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+You can use the App created by StreamLit, with the command:
+
+```
+python streamlit run {LOCAL_FILE}/streamlit/demo_streamlit
+```
+
+Or, if you prefer, you can use the cloud app [**here**](https://share.streamlit.io/amloii/nofakingway/main/streamlit/demo_streamlit.py)
+
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@Amloii](https://github.com/kylelobo) - Idea & Initial work
+- [@Amloii](https://github.com/Amloii/) - Idea & Initial work
 
