@@ -11,6 +11,7 @@ sys.path.append(filters_dir)
 
 from PII.PII_filter import PII_filter, regex_dict
 from Lang.Lang_filter import Lang_filter, create_language_detection_model
+from URL.URL_filter import URL_filter
 
 #Load language model (if was not already loaded)
 language_detection_model = create_language_detection_model()
@@ -52,9 +53,11 @@ if st.button(label="✨ Validate!"):
      result_dict = Lang_filter(language_detection_model, input_dict['review'])
      if not result_dict['suspicious']:
           result_dict = PII_filter(input_dict['review'], regex_dict)
+     if not result_dict['suspicious']:
+          result_dict = URL_filter(input_dict['review'])
      
      if result_dict['suspicious']:
-          st.error(f'💢 THE REVIEW IS SUSPICIOUS! \n  We think this review includes {result_dict["filter_failed"]} ( Candidates: {result_dict["motive"]})')
+          st.error(f'💢 THE REVIEW IS SUSPICIOUS! \n  We think this review includes {result_dict["filter_failed"]} ( Motive: {result_dict["motive"]})')
           
      else:
           st.success('✔️ THE REVIEW IS VALID! \n  Nothing to see here.')

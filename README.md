@@ -32,6 +32,7 @@ The Fake Reviews and the Spam are typically problems related to e-commerce platf
 This repository validates the review across multiple filters, removing different spam cases. At this moment, the applied filters are:
 - **Lang filter**: Mark the review as suspicious if it was written in another language different to Spanish, English, and french (You can modify the allowed languages in [this script](https://github.com/Amloii/NoFakingWay/blob/cc20ec70e375f67482cc96c620442fa6b0aba753/filters/Lang/Lang_filter.py)), or the words don't correspond to any language (for example, jsdfisefbijfd adifaio)
 - **PII filter**: Mark the review as Spam suspicious if includes Personal Information, such as Telephone numbers or ID credentials.
+- **URL filter**: Mark any review with URL as Spam.
 
 ## 🎬 Getting Started
 
