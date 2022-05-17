@@ -10,16 +10,29 @@ class TestOffensiveFilter:
         self.filter_object = OffensiveFilter('CHAR_1977_Automatic_review_validation//tests//resources//')
 
         self.prefix_path = 'CHAR_1977_Automatic_review_validation.src.Filters.offensive_filter.OffensiveFilter'
-
+        self.filter_non_triggered_output = {'filter_failed': 'Offensive', 'motive': '', 'suspicious': False}
         self.filter_triggered_output = {'filter_failed': 'Offensive', 'motive': 'explicit_sex', 'suspicious': True}
 
         self.english_language_object = {'693_1': 'en', 'name': 'english'}
         self.spanish_language_object = {'693_1': 'es', 'name': 'spanish'}
+        self.french_language_object = {'693_1': 'fr', 'name': 'french'}
         self.italian_language_object = {'693_1': 'it', 'name': 'italian'}
         self.none_language_object = {'693_1': None, 'name': None}
 
     def test_build_an_offensivefilter_object(self):
         assert isinstance(self.filter_object, OffensiveFilter)
+
+    def test_happy_path_with_english_review(self):
+        assert self.filter_object.predict('This is an english review', self.english_language_object) \
+               == self.filter_non_triggered_output
+
+    def test_happy_path_with_spanish_review(self):
+        assert self.filter_object.predict('Esta es una review en español', self.spanish_language_object) \
+               == self.filter_non_triggered_output
+
+    def test_happy_path_with_french_review(self):
+        assert self.filter_object.predict('Ceci est une critique en français', self.french_language_object) \
+               == self.filter_non_triggered_output
 
     def test__build_review_wordlist_unifies_separators_to_whitespace(self):
         review_with_some_separators = 'This is  a    review with \n various separators'
@@ -30,8 +43,6 @@ class TestOffensiveFilter:
         review_with_accents = 'Cuántos acentos tiene esta expresión!'
         review_wordlist = {'!', 'acentos', 'cuantos', 'expresion'}
         assert self.filter_object._build_review_wordlist(review_with_accents, self.spanish_language_object) == review_wordlist
-
-
 
 
     def test__transform_chars_to_letters_transforms_selected_chars_to_letters(self):

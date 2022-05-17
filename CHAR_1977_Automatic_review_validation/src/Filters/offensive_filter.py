@@ -1,11 +1,14 @@
 import os
 import re
 from itertools import product
-from unidecode import unidecode
-import pandas as pd
+
 import nltk
+import pandas as pd
+from unidecode import unidecode
+
 nltk.download('stopwords')
 nltk.download('punkt')
+
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from textdistance import damerau_levenshtein, mra

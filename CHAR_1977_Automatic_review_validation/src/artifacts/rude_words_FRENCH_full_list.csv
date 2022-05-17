@@ -146,25 +146,25 @@ testicules,,explicit_sex
 testiculaire,,explicit_sex
 têtu,,explicit_sex
 teub,,explicit_sex
-transformisme,,insult, unsuitable_expression
-transvestisme,,insult, unsuitable_expression
-trasformismo,,insult, unsuitable_expression
-travestis,,insult, unsuitable_expression
-travestisme,,insult, unsuitable_expression
-travestissement,,insult, unsuitable_expression
+transformisme,,insult-unsuitable_expression
+transvestisme,,insult-unsuitable_expression
+trasformismo,,insult-unsuitable_expression
+travestis,,insult-unsuitable_expression
+travestisme,,insult-unsuitable_expression
+travestissement,,insult-unsuitable_expression
 vagin,,explicit_sex
 vaginale,,explicit_sex
 vil,,insult
 violation,,explicit_sex-violence
 viol,,explicit_sex-violence
 violée,,explicit_sex-violence
-violence,,insult, unsuitable_expression
-violent,,insult, unsuitable_expression
-violente,,insult, unsuitable_expression
-violents,,insult, unsuitable_expression
-violeur,,insult, unsuitable_expression
-violeurs,,insult, unsuitable_expression
-violeuse,,insult, unsuitable_expression
-viols,,insult, unsuitable_expression
+violence,,insult-unsuitable_expression
+violent,,insult-unsuitable_expression
+violente,,insult-unsuitable_expression
+violents,,insult-unsuitable_expression
+violeur,,insult-unsuitable_expression
+violeurs,,insult-unsuitable_expression
+violeuse,,insult-unsuitable_expression
+viols,,insult-unsuitable_expression
 zizi,,explicit_sex
 zob,,explicit_sex
