@@ -2,14 +2,20 @@
 import langdetect
 import language_data
 from langcodes import Language, standardize_tag
+import os
+import sys
 
-from CHAR_1977_Automatic_review_validation.src.Filters.Filler_filter import \
+# Load filters folders
+filters_dir = os.path.join(os.path.dirname( __file__ ), '..' )
+sys.path.append(filters_dir) 
+
+from Filters.Filler_filter import \
     FillerFilter
-from CHAR_1977_Automatic_review_validation.src.Filters.offensive_filter import \
+from Filters.offensive_filter import \
     OffensiveFilter
-from CHAR_1977_Automatic_review_validation.src.Filters.PII_filter import \
+from Filters.PII_filter import \
     PersonalInformationFilter
-from CHAR_1977_Automatic_review_validation.src.Filters.URL_filter import \
+from Filters.URL_filter import \
     URLFilter
 
 # In AWS
