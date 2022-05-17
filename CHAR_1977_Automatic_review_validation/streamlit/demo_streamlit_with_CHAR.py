@@ -48,7 +48,7 @@ if st.button(label="✨ Validate!"):
      input_dict['value'] = 5
      
 
-     prediction = filter_object.predict(input_dict['review'])
+     prediction = filter_object.predict(input_dict)
      
      
      if prediction['suspicious']:
