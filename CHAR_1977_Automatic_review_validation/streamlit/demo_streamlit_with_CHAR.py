@@ -83,4 +83,14 @@ if st.button(label="✨ Validate!"):
      
 st.write ('Still under development')
 
+st.subheader('Documentation', anchor=None)
+st.write ('Still under development')
 
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(
+    np.random.randn(50, 20),
+    columns=('col %d' % i for i in range(20)))
+
+st.dataframe(df)  # Same as st.write(df)
