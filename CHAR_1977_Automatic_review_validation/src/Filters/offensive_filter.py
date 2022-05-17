@@ -1,18 +1,18 @@
 import os
 import re
 from itertools import product
-
+from unidecode import unidecode
 import pandas as pd
+import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 from textdistance import damerau_levenshtein, mra
 from wordfreq import zipf_frequency
 
 CHARS_REPLACING_DICT = {'0': ['o'], '1': ['i', 'l'], '3': ['b'], '4': ['a'], '8': ['b'], '$': ['s'], '&': ['s']}
 SPECIAL_CHARACTERS = '.^$*+-?()[]{}\\|—/'
 
-import nltk
-nltk.download('stopwords')
-from nltk.corpus import stopwords
 
 class OffensiveFilter:
     def __init__(self, data_folder_path='artifacts//'):
@@ -75,13 +75,15 @@ class OffensiveFilter:
 
     @staticmethod
     def _build_review_wordlist(review, review_language):
+
         if review_language['name'] in stopwords.fileids():
             stop_words = set(stopwords.words(review_language['name']))
         else:
             stop_words = set(stopwords.words('english'))
 
         if isinstance(review, str) and review:
-            return set([word for word in review.lower().split(' ') if word not in stop_words])
+            return set([unidecode(word) for word in word_tokenize(review.lower(), review_language['name']) if word not
+                        in stop_words])
         else:
             return {}
 

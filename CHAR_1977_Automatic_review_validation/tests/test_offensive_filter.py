@@ -21,6 +21,19 @@ class TestOffensiveFilter:
     def test_build_an_offensivefilter_object(self):
         assert isinstance(self.filter_object, OffensiveFilter)
 
+    def test__build_review_wordlist_unifies_separators_to_whitespace(self):
+        review_with_some_separators = 'This is  a    review with \n various separators'
+        review_wordlist = {'review', 'separators', 'various'}
+        assert self.filter_object._build_review_wordlist(review_with_some_separators, self.english_language_object) == review_wordlist
+
+    def test__build_review_wordlist_drops_out_accents(self):
+        review_with_accents = 'Cuántos acentos tiene esta expresión!'
+        review_wordlist = {'!', 'acentos', 'cuantos', 'expresion'}
+        assert self.filter_object._build_review_wordlist(review_with_accents, self.spanish_language_object) == review_wordlist
+
+
+
+
     def test__transform_chars_to_letters_transforms_selected_chars_to_letters(self):
         assert sorted(self.filter_object._transform_chars_to_letters('f00l')) == ['f00l', 'fool']
 
