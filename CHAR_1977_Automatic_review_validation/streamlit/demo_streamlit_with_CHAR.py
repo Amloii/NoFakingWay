@@ -3,6 +3,7 @@ import sys
 import json
 import uuid
 import os
+import pandas as pd
 
 # Load filters folders
 filters_dir = os.path.join(os.path.dirname( __file__ ), '..', 'src' )
@@ -84,13 +85,12 @@ if st.button(label="✨ Validate!"):
 st.write ('Still under development')
 
 st.subheader('Documentation', anchor=None)
-st.write ('Still under development')
 
-import pandas as pd
-import numpy as np
+data = {
+     'URL': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1979547649/Data+CHAR-2295+Analyze+solutions+for+URL+detection',
+     'Personal Info': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1975648261/Data+CHAR-2184+Analyze+solutions+for+Personal+Information+Filter',
+     'Filler': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976467458/Data+CHAR-2213+Analyze+solutions+for+Filler+Reviews+Filter',
+     'Offensive': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976893441/Data+CHAR-2212+Analyze+solutions+for+Ofensive+Reviews+Filter'}
+df = pd.DataFrame.from_dict(data, orient='index')
 
-df = pd.DataFrame(
-    np.random.randn(50, 20),
-    columns=('col %d' % i for i in range(20)))
-
-st.dataframe(df)  # Same as st.write(df)
+st.dataframe(df) 
