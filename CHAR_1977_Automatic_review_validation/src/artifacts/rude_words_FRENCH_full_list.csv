@@ -1,170 +1,170 @@
-bad_word;roots;tags
-abruti;;insult
-abus;;violence
-accro;;drugs
-adultère;;explicit_sex
-aggression sexuelle;;explicit_sex-violence
-agressée sexuellement;;explicit_sex-violence
-agressions sexuelles;;explicit_sex-violence
-agressif;;violence
-agresseur;;violence
-agressive;;violence
-aigrefin;;insult
-analphabète;;insult
-anus;;explicit_sex
-assassinat;;violencia
-assaut sexuel;;explicit_sex-violence
-attardé;;insult
-baise;;insult
-baisé;;insult
-batard;;insult
-bâtard;;insult
-batrachus;;insult
-batracien;;insult
-bercé trop près du mur;;insult
-bêtise;;insult
-bêtement;;insult
-bougon;;insult
-bougrerie;;explicit_sex
-branler;;explicit_sex
-branlage;;explicit_sex
-branlette;;explicit_sex
-branleur;;explicit_sex
-c'est de la foutaise;foutaise;insult
-cambrioleuse;;insult
-cambrioleur;;insult
-chapardeur;;insult
-chienne;;insult
-chiennes;;insult
-conne;;insult
-connaud;;insult
-connasse;;insult
-connarde;;insult
-connerie;;insult
-connichon;;insult
-connil;;insult
-connin;;unsuitable_expression
-cornard;;insult
-couillon;;insult
-débile;;insult
-sexe;;explicit_sex
-écume;;insult
-enconner;;explicit_sex
-enculade;;explicit_sex
-enculage;;explicit_sex
-enculé;;explicit_sex
-enculer;;explicit_sex
-escort-boy;;insult-sexism
-escortboy;;insult-sexism
-escorte masculine;;insult-sexism
-faire l'amour;;explicit_sex
-faire zizi-panpan;;explicit_sex
-faschiste;;insult
-fascisant;;insult
-fascisme;;insult
-fascismes;;insult
-fascista;;insult
-fasciste;;insult
-fascistes;;insult
-fascists;;insult
-fesse;;explicit_sex
-fesses;;explicit_sex
-fessier;;explicit_sex
-fessière;;explicit_sex
-fessières;;explicit_sex
-forniquer;;explicit_sex
-fornicatrice;;explicit_sex
-gaule;;explicit_sex
-glandeur;;insult
-handicapé;;insult
-handicapée;;insult
-handicapées;;insult
-handicapés;;insult
-idiot;;insult
-idiote;;insult
-idiotie;;insult
-imbécile;;insult
-imbécilement;;insult
-imbécilité;;insult
-insensé;;insult
-mange-merde;merde;insult
-méchante;;insult
-mécréant;;insult
-merde;;insult
-nance;;insult-homophobia
-néné;;explicit_sex
-niais;;insult
-nibard;;explicit_sex
-nichon;;explicit_sex
-nigaud;;explicit_sex
-nique;;insult
-niqué;;insult
-pédéraste;;sexism
-pederastie;;sexism
-pédérastie;;sexism
-pédérastique;;sexism
-pénétration anale;;explicit_sex
-pénis;;explicit_sex
-pilosité pubienne;;unsuitable_expression
-poils pubiens;;unsuitable_expression
-prostitué;;explicit_sex-sexism
-prostituée;;explicit_sex-sexism
-prostituées;;explicit_sex-sexism
-prostitution;;explicit_sex-sexism
-prout;;unsuitable_expression
-proxénète;;explicit_sex-sexism
-proxénètes;;explicit_sex-sexism
-proxenetisme;;explicit_sex-sexism
-proxénétisme;;explicit_sex-sexism
-putain;;insult-sexism
-putains;;insult-sexism
-pute;;insult-sexism
-rapport anal;;explicit_sex
-renard;;insult-sexism
-renarde;;insult-sexism
-salope;;insult-sexism
-sbire;;insult
-sensuel;;explicit_sex
-services sexuels;;explicit_sex
-sévice;;explicit_sex
-sexe anal;;explicit_sex
-sexualité anale;;explicit_sex
-slut;;insult-sexism
-sodomie;;explicit_sex
-sodomisé;;explicit_sex
-sodomiser;;explicit_sex
-sodomist;;explicit_sex
-sodomiste;;explicit_sex
-sodomite;;explicit_sex
-stupide;;insult
-stupidement;;insutl
-stupidité;;insutl
-tantouze;;insult-homophobia
-tapette;;insult-homophobia
-testicule;;explicit_sex
-testicules;;explicit_sex
-testiculaire;;explicit_sex
-têtu;;explicit_sex
-teub;;explicit_sex
-transformisme;;insult; unsuitable_expression
-transvestisme;;insult; unsuitable_expression
-trasformismo;;insult; unsuitable_expression
-travestis;;insult; unsuitable_expression
-travestisme;;insult; unsuitable_expression
-travestissement;;insult; unsuitable_expression
-vagin;;explicit_sex
-vaginale;;explicit_sex
-vil;;insult
-violation;;explicit_sex-violence
-viol;;explicit_sex-violence
-violée;;explicit_sex-violence
-violence;;insult; unsuitable_expression
-violent;;insult; unsuitable_expression
-violente;;insult; unsuitable_expression
-violents;;insult; unsuitable_expression
-violeur;;insult; unsuitable_expression
-violeurs;;insult; unsuitable_expression
-violeuse;;insult; unsuitable_expression
-viols;;insult; unsuitable_expression
-zizi;;explicit_sex
-zob;;explicit_sex
+bad_word,roots,tags
+abruti,,insult
+abus,,violence
+accro,,drugs
+adultère,,explicit_sex
+aggression sexuelle,,explicit_sex-violence
+agressée sexuellement,,explicit_sex-violence
+agressions sexuelles,,explicit_sex-violence
+agressif,,violence
+agresseur,,violence
+agressive,,violence
+aigrefin,,insult
+analphabète,,insult
+anus,,explicit_sex
+assassinat,,violencia
+assaut sexuel,,explicit_sex-violence
+attardé,,insult
+baise,,insult
+baisé,,insult
+batard,,insult
+bâtard,,insult
+batrachus,,insult
+batracien,,insult
+bercé trop près du mur,,insult
+bêtise,,insult
+bêtement,,insult
+bougon,,insult
+bougrerie,,explicit_sex
+branler,,explicit_sex
+branlage,,explicit_sex
+branlette,,explicit_sex
+branleur,,explicit_sex
+c'est de la foutaise,foutaise,insult
+cambrioleuse,,insult
+cambrioleur,,insult
+chapardeur,,insult
+chienne,,insult
+chiennes,,insult
+conne,,insult
+connaud,,insult
+connasse,,insult
+connarde,,insult
+connerie,,insult
+connichon,,insult
+connil,,insult
+connin,,unsuitable_expression
+cornard,,insult
+couillon,,insult
+débile,,insult
+sexe,,explicit_sex
+écume,,insult
+enconner,,explicit_sex
+enculade,,explicit_sex
+enculage,,explicit_sex
+enculé,,explicit_sex
+enculer,,explicit_sex
+escort-boy,,insult-sexism
+escortboy,,insult-sexism
+escorte masculine,,insult-sexism
+faire l'amour,,explicit_sex
+faire zizi-panpan,,explicit_sex
+faschiste,,insult
+fascisant,,insult
+fascisme,,insult
+fascismes,,insult
+fascista,,insult
+fasciste,,insult
+fascistes,,insult
+fascists,,insult
+fesse,,explicit_sex
+fesses,,explicit_sex
+fessier,,explicit_sex
+fessière,,explicit_sex
+fessières,,explicit_sex
+forniquer,,explicit_sex
+fornicatrice,,explicit_sex
+gaule,,explicit_sex
+glandeur,,insult
+handicapé,,insult
+handicapée,,insult
+handicapées,,insult
+handicapés,,insult
+idiot,,insult
+idiote,,insult
+idiotie,,insult
+imbécile,,insult
+imbécilement,,insult
+imbécilité,,insult
+insensé,,insult
+mange-merde,merde,insult
+méchante,,insult
+mécréant,,insult
+merde,,insult
+nance,,insult-homophobia
+néné,,explicit_sex
+niais,,insult
+nibard,,explicit_sex
+nichon,,explicit_sex
+nigaud,,explicit_sex
+nique,,insult
+niqué,,insult
+pédéraste,,sexism
+pederastie,,sexism
+pédérastie,,sexism
+pédérastique,,sexism
+pénétration anale,,explicit_sex
+pénis,,explicit_sex
+pilosité pubienne,,unsuitable_expression
+poils pubiens,,unsuitable_expression
+prostitué,,explicit_sex-sexism
+prostituée,,explicit_sex-sexism
+prostituées,,explicit_sex-sexism
+prostitution,,explicit_sex-sexism
+prout,,unsuitable_expression
+proxénète,,explicit_sex-sexism
+proxénètes,,explicit_sex-sexism
+proxenetisme,,explicit_sex-sexism
+proxénétisme,,explicit_sex-sexism
+putain,,insult-sexism
+putains,,insult-sexism
+pute,,insult-sexism
+rapport anal,,explicit_sex
+renard,,insult-sexism
+renarde,,insult-sexism
+salope,,insult-sexism
+sbire,,insult
+sensuel,,explicit_sex
+services sexuels,,explicit_sex
+sévice,,explicit_sex
+sexe anal,,explicit_sex
+sexualité anale,,explicit_sex
+slut,,insult-sexism
+sodomie,,explicit_sex
+sodomisé,,explicit_sex
+sodomiser,,explicit_sex
+sodomist,,explicit_sex
+sodomiste,,explicit_sex
+sodomite,,explicit_sex
+stupide,,insult
+stupidement,,insutl
+stupidité,,insutl
+tantouze,,insult-homophobia
+tapette,,insult-homophobia
+testicule,,explicit_sex
+testicules,,explicit_sex
+testiculaire,,explicit_sex
+têtu,,explicit_sex
+teub,,explicit_sex
+transformisme,,insult, unsuitable_expression
+transvestisme,,insult, unsuitable_expression
+trasformismo,,insult, unsuitable_expression
+travestis,,insult, unsuitable_expression
+travestisme,,insult, unsuitable_expression
+travestissement,,insult, unsuitable_expression
+vagin,,explicit_sex
+vaginale,,explicit_sex
+vil,,insult
+violation,,explicit_sex-violence
+viol,,explicit_sex-violence
+violée,,explicit_sex-violence
+violence,,insult, unsuitable_expression
+violent,,insult, unsuitable_expression
+violente,,insult, unsuitable_expression
+violents,,insult, unsuitable_expression
+violeur,,insult, unsuitable_expression
+violeurs,,insult, unsuitable_expression
+violeuse,,insult, unsuitable_expression
+viols,,insult, unsuitable_expression
+zizi,,explicit_sex
+zob,,explicit_sex
