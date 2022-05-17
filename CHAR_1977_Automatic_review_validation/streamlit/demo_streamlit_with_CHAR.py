@@ -17,8 +17,9 @@ examples_dict = {}
 examples_dict['None'] = ''
 examples_dict['Valid review'] = 'La comida estaba muy buena'
 examples_dict['Non Sense Text'] = 'iweoefivhe edfgiowe ieini efwef'
-examples_dict['Personal Info (1)'] = 'Mi numero de telefono es el 690312141'
-examples_dict['Personal Info (2)'] = 'Mi mail es sdsdf@gmail.com'
+examples_dict['Personal Info'] = 'Mi numero de telefono es el 690312141 y mi email es sadfa@gmail.com'
+examples_dict['URL'] = 'Si quieres comer de verdad, ven a https://www.vips.es/'
+examples_dict['Offensive'] = 'El camarero es un estúpido y ojalá se muera'
 
 
 st.set_page_config(
