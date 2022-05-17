@@ -5,15 +5,13 @@ import uuid
 import os
 
 # Load filters folders
-filters_dir = os.path.join(os.path.dirname( __file__ ), '..', 'filters' )
+filters_dir = os.path.join(os.path.dirname( __file__ ), '..', 'src' )
 sys.path.append(filters_dir) 
 
-from PII.PII_filter import PII_filter, regex_dict
-from Lang.Lang_filter import Lang_filter, create_language_detection_model
-from URL.URL_filter import URL_filter
+from src.Ensemble.Ensemble_filter import EnsembleModel
 
 #Load language model (if was not already loaded)
-language_detection_model = create_language_detection_model()
+filter_object = EnsembleModel()
 
 examples_dict = {}
 examples_dict['None'] = ''
@@ -49,15 +47,12 @@ if st.button(label="✨ Validate!"):
      input_dict['review'] = doc
      input_dict['value'] = 5
      
-     result_dict = Lang_filter(language_detection_model, input_dict['review'])
-     if not result_dict['suspicious']:
-          result_dict = PII_filter(input_dict['review'], regex_dict)
-     if not result_dict['suspicious']:
-          result_dict = URL_filter(input_dict['review'])
+
+     prediction = filter_object.predict(input_dict['review'])
      
      
-     if result_dict['suspicious']:
-          st.error(f'💢 THE REVIEW IS SUSPICIOUS! \n  We think this review includes {result_dict["filter_failed"]} ( Motive: {result_dict["motive"]})')
+     if prediction['suspicious']:
+          st.error(f'💢 THE REVIEW IS SUSPICIOUS! \n  We think this review includes {prediction["filter_failed"]} ( Motive: {prediction["motive"]})')
           
      else:
           st.success('✔️ THE REVIEW IS VALID! \n  Nothing to see here.')
@@ -78,7 +73,7 @@ if st.button(label="✨ Validate!"):
      with col2:
           st.subheader('SageMaker endpoint response', anchor=None)
      
-          json_object_output = json.dumps(result_dict, indent = 4) 
+          json_object_output = json.dumps(prediction, indent = 4) 
           
           doc2 = st.text_area('',
           value=json_object_output,
