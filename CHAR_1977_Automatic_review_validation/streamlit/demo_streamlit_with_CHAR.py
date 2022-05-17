@@ -92,5 +92,6 @@ data = {
      'Filler': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976467458/Data+CHAR-2213+Analyze+solutions+for+Filler+Reviews+Filter',
      'Offensive': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976893441/Data+CHAR-2212+Analyze+solutions+for+Ofensive+Reviews+Filter'}
 df = pd.DataFrame.from_dict(data, orient='index')
+df.columns = ['Confluence Info']
 
 st.dataframe(df) 
