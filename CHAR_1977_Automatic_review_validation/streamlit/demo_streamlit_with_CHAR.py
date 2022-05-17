@@ -3,7 +3,6 @@ import sys
 import json
 import uuid
 import os
-import pandas as pd
 
 # Load filters folders
 filters_dir = os.path.join(os.path.dirname( __file__ ), '..', 'src' )
@@ -86,12 +85,7 @@ st.write ('Still under development')
 
 st.subheader('Documentation', anchor=None)
 
-data = {
-     'URL': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1979547649/Data+CHAR-2295+Analyze+solutions+for+URL+detection',
-     'Personal Info': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1975648261/Data+CHAR-2184+Analyze+solutions+for+Personal+Information+Filter',
-     'Filler': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976467458/Data+CHAR-2213+Analyze+solutions+for+Filler+Reviews+Filter',
-     'Offensive': 'https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976893441/Data+CHAR-2212+Analyze+solutions+for+Ofensive+Reviews+Filter'}
-df = pd.DataFrame.from_dict(data, orient='index')
-df.columns = ['Confluence Info']
-
-st.dataframe(df) 
+st.write("URL Filter -> [Confluence Documentation](https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1979547649/Data+CHAR-2295+Analyze+solutions+for+URL+detection)")
+st.write("Personal Info Filter -> [Confluence Documentation](https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1975648261/Data+CHAR-2184+Analyze+solutions+for+Personal+Information+Filter)")
+st.write("Filler Filter -> [Confluence Documentation](https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976467458/Data+CHAR-2213+Analyze+solutions+for+Filler+Reviews+Filter)")
+st.write("Offensive Filter -> [Confluence Documentation](https://nextchance.atlassian.net/wiki/spaces/CHAR/pages/1976893441/Data+CHAR-2212+Analyze+solutions+for+Ofensive+Reviews+Filter)")
