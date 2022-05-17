@@ -8,7 +8,7 @@ import os
 filters_dir = os.path.join(os.path.dirname( __file__ ), '..', 'src' )
 sys.path.append(filters_dir) 
 
-from src.Ensemble.Ensemble_filter import EnsembleModel
+from Ensemble.Ensemble_filter import EnsembleModel
 
 #Load language model (if was not already loaded)
 filter_object = EnsembleModel()
