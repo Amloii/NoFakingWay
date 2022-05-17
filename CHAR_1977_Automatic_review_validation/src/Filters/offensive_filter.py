@@ -10,6 +10,9 @@ from wordfreq import zipf_frequency
 CHARS_REPLACING_DICT = {'0': ['o'], '1': ['i', 'l'], '3': ['b'], '4': ['a'], '8': ['b'], '$': ['s'], '&': ['s']}
 SPECIAL_CHARACTERS = '.^$*+-?()[]{}\\|—/'
 
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
 
 class OffensiveFilter:
     def __init__(self, data_folder_path='artifacts//'):
