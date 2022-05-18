@@ -26,7 +26,7 @@ class OffensiveFilter:
 
         self.frequency_threshold = 3
         self.dl_threshold = 3
-        self.mra_threshold = 2
+        self.mra_threshold = 1
 
     @staticmethod
     def _transform_chars_to_letters(review_word):
