@@ -1,15 +1,18 @@
-
+import os
+import sys
 import pytest
 
-from CHAR_1977_Automatic_review_validation.src.Filters.offensive_filter import \
-    OffensiveFilter
+# Load src folder (in all cases)
+filters_dir = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(filters_dir)
 
+from src.Filters.offensive_filter import OffensiveFilter
 
 class TestOffensiveFilter:
     def setup_class(self):
-        self.filter_object = OffensiveFilter('CHAR_1977_Automatic_review_validation//tests//resources//')
+        self.filter_object = OffensiveFilter('tests/resources/')
 
-        self.prefix_path = 'CHAR_1977_Automatic_review_validation.src.Filters.offensive_filter.OffensiveFilter'
+        self.prefix_path = 'src.Filters.offensive_filter.OffensiveFilter'
         self.filter_non_triggered_output = {'filter_failed': 'Offensive', 'motive': '', 'suspicious': False}
         self.filter_triggered_output = {'filter_failed': 'Offensive', 'motive': 'explicit_sex', 'suspicious': True}
 
@@ -37,13 +40,14 @@ class TestOffensiveFilter:
     def test__build_review_wordlist_unifies_separators_to_whitespace(self):
         review_with_some_separators = 'This is  a    review with \n various separators'
         review_wordlist = {'review', 'separators', 'various'}
-        assert self.filter_object._build_review_wordlist(review_with_some_separators, self.english_language_object) == review_wordlist
+        assert self.filter_object._build_review_wordlist(review_with_some_separators,
+                                                         self.english_language_object) == review_wordlist
 
     def test__build_review_wordlist_drops_out_accents(self):
         review_with_accents = 'Cuántos acentos tiene esta expresión!'
         review_wordlist = {'!', 'acentos', 'cuantos', 'expresion'}
-        assert self.filter_object._build_review_wordlist(review_with_accents, self.spanish_language_object) == review_wordlist
-
+        assert self.filter_object._build_review_wordlist(review_with_accents,
+                                                         self.spanish_language_object) == review_wordlist
 
     def test__transform_chars_to_letters_transforms_selected_chars_to_letters(self):
         assert sorted(self.filter_object._transform_chars_to_letters('f00l')) == ['f00l', 'fool']

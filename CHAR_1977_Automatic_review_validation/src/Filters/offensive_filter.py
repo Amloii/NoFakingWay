@@ -4,28 +4,29 @@ from itertools import product
 
 import nltk
 import pandas as pd
-from unidecode import unidecode
-
-nltk.download('stopwords')
-nltk.download('punkt')
-
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from textdistance import damerau_levenshtein, mra
+from unidecode import unidecode
 from wordfreq import zipf_frequency
+
+nltk.download('stopwords')
+nltk.download('punkt')
 
 CHARS_REPLACING_DICT = {'0': ['o'], '1': ['i', 'l'], '3': ['b'], '4': ['a'], '8': ['b'], '$': ['s'], '&': ['s']}
 SPECIAL_CHARACTERS = '.^$*+-?()[]{}\\|—/'
 
 
 class OffensiveFilter:
-    def __init__(self, data_folder_path='artifacts//'):
+    def __init__(self, data_folder_path=os.path.join(os.path.dirname(__file__), '..', 'artifacts')):
         self.data_folder_path = data_folder_path
-        self.default_rude_words_record_path = self.data_folder_path + 'rude_words_ENGLISH_full_list.csv'
+        self.default_rude_words_record_path = os.path.join(self.data_folder_path, 'rude_words_ENGLISH_full_list.csv')
         self.allowed_languages_list = ['en', 'es', 'fr']
 
         self.frequency_threshold = 3
-        self.dl_threshold = 3
+
+        self.dl_threshold = 2
+
         self.mra_threshold = 1
 
     @staticmethod
@@ -86,7 +87,7 @@ class OffensiveFilter:
             stop_words = set(stopwords.words('english'))
 
         if isinstance(review, str) and review:
-            return set([unidecode(word) for word in word_tokenize(review.lower(), review_language['name']) if word not
+            return set([unidecode(word) for word in word_tokenize(review.lower()) if word not
                         in stop_words])
         else:
             return {}
@@ -96,7 +97,7 @@ class OffensiveFilter:
         record_file_name = 'rude_words_' + str(review_language['name']).upper() + '_full_list.csv'
 
         if record_file_name in os.listdir(self.data_folder_path):
-            rude_words_record = pd.read_csv(self.data_folder_path + record_file_name, sep=',')
+            rude_words_record = pd.read_csv(os.path.join(self.data_folder_path, record_file_name), sep=',')
         else:
             rude_words_record = pd.read_csv(self.default_rude_words_record_path, sep=',')
 

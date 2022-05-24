@@ -1,8 +1,3 @@
-import re
-
-import langdetect
-from langcodes import Language, standardize_tag
-
 
 class FillerFilter:
 
@@ -11,7 +6,7 @@ class FillerFilter:
 
     @staticmethod
     def filler_filter_alphanumeric(review: str):
-        if not bool(re.match('[a-zA-Z0-9]', review)):
+        if not any(str(char).isalnum() for char in review):
             result_dict = {'suspicious': True, 'filter_failed': 'Filler',
                            'motive': "Review doesn't contain alphanumeric characters"}
         else:
@@ -19,7 +14,7 @@ class FillerFilter:
                            'motive': ''}
         return result_dict
 
-    def filler_filter_valid_language(self, review: str, review_language):
+    def filler_filter_valid_language(self, review_language):
         if review_language['693_1'] not in self.allowed_languages_list:
             result_dict = {'suspicious': True, 'filter_failed': 'Filler',
                            'motive':
@@ -35,4 +30,4 @@ class FillerFilter:
         if result_alphanumeric.get('suspicious'):
             return result_alphanumeric
         else:
-            return self.filler_filter_valid_language(review, review_language)
+            return self.filler_filter_valid_language(review_language)

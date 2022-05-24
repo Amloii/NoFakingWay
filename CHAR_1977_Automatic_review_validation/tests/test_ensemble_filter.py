@@ -1,13 +1,17 @@
 import pytest
+import os
+import sys
 
-from CHAR_1977_Automatic_review_validation.src.Ensemble.Ensemble_filter import \
-    EnsembleModel
+# Load src folder (in all cases)
+filters_dir = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(filters_dir)
 
+from src.Ensemble.Ensemble_filter import EnsembleModel
 
 class TestEnsemble:
     def setup_class(self):
-        self.ensemble_model = EnsembleModel('CHAR_1977_Automatic_review_validation//tests//resources//')
-        self.prefix_path = 'CHAR_1977_Automatic_review_validation.src.'
+        self.ensemble_model = EnsembleModel('tests/resources/')
+        self.prefix_path = 'src.'
 
         self.english_language_object = {'693_1': 'en', 'name': 'english'}
         self.spanish_language_object = {'693_1': 'es', 'name': 'spanish'}
@@ -30,7 +34,6 @@ class TestEnsemble:
 
     def test__detect_language_returns_null_language_dict_when_a_void_review_passed(self):
         assert self.ensemble_model._detect_language('') == self.none_language_object
-
 
     def test_predict_calls__filler_filter(self, _filler_filter_predict_mock):
         self.ensemble_model.predict({'review': '*-*/'})
@@ -74,9 +77,10 @@ class TestEnsemble:
         path_url = 'Filters.URL_filter.URLFilter'
         yield mocker.patch(self.prefix_path + path_url + '.predict',
                            return_value={'suspicious': True, 'filter_failed': 'URL',
-                                         'motive': "Review doesn't contain alphanumeric characters"})
+                                         'motive': "Given text contains some URL"})
 
     @pytest.fixture()
     def _detect_language_mock(self, mocker):
         path_ensemble = 'Ensemble.Ensemble_filter'
-        yield mocker.patch(self.prefix_path + path_ensemble + '._detect_language', return_value={'693_1': 'en', 'iso': 'english'})
+        yield mocker.patch(self.prefix_path + path_ensemble + '._detect_language',
+                           return_value={'693_1': 'en', 'iso': 'english'})

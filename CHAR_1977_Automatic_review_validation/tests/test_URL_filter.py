@@ -1,11 +1,18 @@
-from CHAR_1977_Automatic_review_validation.src.Filters.URL_filter import \
-    URLFilter
+import os
+import sys
+import pytest
+
+# Load src folder (in all cases)
+filters_dir = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(filters_dir)
+
+from src.Filters.URL_filter import URLFilter
 
 
 class TestURLFilter:
     def setup_class(self):
         self.filter_object = URLFilter()
-        self.prefix_path = 'CHAR_1977_Automatic_review_validation.src.Filters.URL_filter'
+        self.prefix_path = 'src.Filters.URL_filter'
 
     def test_build_an_URLFilter_object(self):
         assert isinstance(self.filter_object, URLFilter)
