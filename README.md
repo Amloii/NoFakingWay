@@ -112,7 +112,7 @@ MIT — see [LICENSE](LICENSE).
 
 Built during his tenure as Lead Data Scientist at NoFakes (Grupo NextChance), focusing on NLP-based fraud detection.
 
-[GitHub](https://github.com/Amloii) · [LinkedIn](https://linkedin.com/in/danigdominguez) · [Portfolio](https://amloii.github.io)
+[GitHub](https://github.com/Amloii) · [LinkedIn](https://linkedin.com/in/danigdominguez) · [Portfolio](https://amloii-page.pages.dev)
 
 <br>
 
